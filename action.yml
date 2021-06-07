@@ -1,0 +1,41 @@
+# action.yml
+name: 'Rafay Publish Workload'
+description: 'Create/Update Rafay Workload and Publish'
+inputs:
+  rafay-api-key:
+    description: 'Rafay API Key'
+    required: true
+  rafay-api-secret:
+    description: 'Rafay API Secret'
+    required: true
+  rafay-endpoint:
+    description: 'Rafay Console Endpoint'
+    required: true
+    default: 'console.rafay.dev'
+  rafay-project:
+    description: 'Rafay Project'
+    required: true
+    default: 'defaultproject'
+  workload-name:
+    description: 'Name of the workload'
+    required: true
+  namespace-name:
+    description: 'Name of the namespace where workload should get deployed'
+    required: true
+  workload-spec-path:
+    description: 'Path to the workload spec'
+    required: true
+outputs:
+  workload_status:
+    description: 'status of the workload publish'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.rafay-api-key }}
+    - ${{ inputs.rafay-api-secret }}
+    - ${{ inputs.rafay-endpoint }}
+    - ${{ inputs.rafay-project }}
+    - ${{ inputs.workload-name }}
+    - ${{ inputs.namespace-name }}
+    - ${{ inputs.workload-spec-path }}
