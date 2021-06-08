@@ -23,7 +23,7 @@ status of the workload after publish
 
 ## Example usage
 ```yaml
-uses: actions/rafay-publish-workload@v1
+uses: actions/rafay-publish-workload@v1.2
 with:
   rafay-api-key: ${{ secrets.RAFAY_API_KEY }}
   rafay-api-secret: ${{ secrets.RAFAY_API_SECRET }}
