@@ -1,6 +1,9 @@
 # action.yml
 name: 'Rafay Publish Workload'
 description: 'Create/Update Rafay Workload and Publish'
+branding:
+  icon: 'arrow-up-circle'
+  color: 'green'
 inputs:
   rafay-api-key:
     description: 'Rafay API Key'
